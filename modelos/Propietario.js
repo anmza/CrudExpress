@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 let Tareaschema = new mongoose.Schema({
 
-    Documento: String,
+    Documento: Number,
     Nombre: String,
     Apellido: String,
-    Telefono: String,
+    Telefono: Number,
     Ciudad: String,
     Correo: String
 });

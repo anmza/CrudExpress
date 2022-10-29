@@ -5,8 +5,8 @@ let Tareaschema = new mongoose.Schema({
     Placa: String,
     Tipo: String,
     Marca: String,
-    Modelo: String,
-    CapacidadPasajeros: String,
+    Modelo: Number,
+    CapacidadPasajeros: Number,
     Cilindraje: String,
     PaisOrigen: String,
     Caracteristicas: String

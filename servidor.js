@@ -90,13 +90,18 @@ router.delete('/del', function(req, res) {
 app.put('/edit', function(req, res){
 
     const filter = { Documento: req.body.Documento };
-    const update =  { Ciudad: req.body.Ciudad };
+    const update =  { 
+        Nombre: req.body.Nombre,
+        Apellido: req.body.Apellido,
+        Telefono: req.body.Telefono,
+        Ciudad: req.body.Ciudad,
+        Correo: req.body.Correo };
 
     Propietario.findOneAndUpdate(filter, update, function(err, doc){
 
         if(err){
 
-            res.send("Error, No se pudo editar Usuario");
+            res.send("Error, No se pudo editar Usuario. Digitar Valores Correctos");
         }else{
 
             res.send("El usuario se ha actualizado con exito");
@@ -178,13 +183,20 @@ router.delete('/del/Vehiculo', function(req, res) {
 app.put('/edit/Vehiculo', function(req, res){
 
     const filter = { Placa: req.body.Placa };
-    const update =  { Caracteristicas: req.body.Caracteristicas };
+    const update =  {
+        Tipo: req.body.Tipo,
+        Marca: req.body.Marca,
+        Modelo: req.body.Modelo,
+        CapacidadPasajeros: req.body.CapacidadPasajeros,
+        Cilindraje: req.body.Cilindraje,
+        PaisOrigen: req.body.PaisOrigen,
+        Caracteristicas: req.body.Caracteristicas };
 
     Vehiculo.findOneAndUpdate(filter, update, function(err, doc){
 
         if(err){
 
-            res.send("Error, No se pudo editar Vehiculo");
+            res.send("Error, No se pudo editar Vehiculo. Digitar valores correctos");
         }else{
 
             res.send("El Vehiculo se ha actualizado con exito");
